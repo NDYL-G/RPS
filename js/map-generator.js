@@ -1,5 +1,9 @@
 // js/map-generator.js
 
+// Log to ensure this script is loaded
+console.log("map-generator.js script loaded");
+
+// Define the TILE_TYPES and UNIT_TYPES constants (as before)
 const TILE_TYPES = {
   NEUTRAL: "neutral",
   BASE: "base",
@@ -12,9 +16,7 @@ const TILE_TYPES = {
 const UNIT_TYPES = ["rock", "paper", "scissors"];
 const PLAYER_COLORS = ["red", "blue", "yellow", "green"];
 
-/**
- * Create axial coordinates for a hex grid of given radius
- */
+// Generate a hex grid with axial coordinates
 function generateHexGrid(radius) {
   const tiles = [];
   for (let q = -radius; q <= radius; q++) {
@@ -27,16 +29,12 @@ function generateHexGrid(radius) {
   return tiles;
 }
 
-/**
- * Axial distance between two hexes
- */
+// Axial distance between two hexes
 function hexDistance(a, b) {
   return (Math.abs(a.q - b.q) + Math.abs(a.q + a.r - b.q - b.r) + Math.abs(a.r - b.r)) / 2;
 }
 
-/**
- * Choose N random tiles that meet a predicate
- */
+// Function to choose N random tiles that meet a predicate
 function chooseRandomTiles(tiles, count, predicate) {
   const candidates = tiles.filter(predicate);
   const chosen = [];
@@ -47,10 +45,11 @@ function chooseRandomTiles(tiles, count, predicate) {
   return chosen;
 }
 
-/**
- * Generate a game map
- */
-function generateMap(players) {
+// Exported function to generate the game map
+export function generateMap(players) {
+  // Log to confirm the function is called and see how many players are passed
+  console.log("generateMap called with " + players + " players");
+
   const radius = Math.max(5, 3 + players); // min size with breathing room
   const tiles = generateHexGrid(radius);
 
@@ -88,9 +87,9 @@ function generateMap(players) {
     });
   });
 
+  // Return the generated map (tiles)
   return tiles;
 }
 
-// Example usage:
-const mapData = generateMap(4);
-console.log(mapData);
+// Additional log for debugging
+console.log("generateMap function is defined");
