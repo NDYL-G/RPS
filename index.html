@@ -26,11 +26,12 @@
   </div>
 
   <!-- Include JS Scripts in Correct Order -->
+  <script type="module" src="js/map-generator.js"></script> <!-- Generates the map data -->
   <script type="module" src="js/svg-utils.js"></script>     <!-- Utility functions for hex rendering -->
   <script type="module" src="js/tile-renderer.js"></script> <!-- Tile rendering logic -->
   <script type="module" src="js/unit-renderer.js"></script> <!-- Unit rendering logic -->
   <script type="module" src="js/svg-renderer.js"></script>  <!-- Combines tile and unit rendering -->
-  <script type="module" src="js/map-generator.js"></script> <!-- Generates the map data -->
+  //<script type="module" src="js/map-generator.js"></script> <!-- Generates the map data -->
 
   <script>
     // Start the game and render a sample map on page load
