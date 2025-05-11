@@ -1,1 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hex Strategy Game</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    svg { width: 100%; height: 90vh; background: #f0f0f0; }
+  </style>
+</head>
+<body>
+  <svg id="gameBoard"></svg>
+
+  <script type="module">
+    import { generateMap } from "../js/map-generator.js";
+    import { renderMap } from "../js/svg-renderer.js";
+
+    const mapData = generateMap(4); // For 4 players
+    const svg = document.getElementById("gameBoard");
+
+    renderMap(svg, mapData);
+  </script>
+</body>
+</html>
 
