@@ -1,0 +1,65 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Game Title */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #112656; /* Dark Blue */
+}
+
+/* Start Game Button */
+button {
+    background-color: #FD9803; /* Vivid Orange */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e68a00; /* Slightly darker orange */
+}
+
+/* SVG Map Container */
+#game-map {
+    margin-top: 30px;
+    border: 2px solid #112656; /* Dark Blue Border */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for tile (will be applied dynamically through JS) */
+.hex-tile {
+    fill: #cccccc; /* Neutral tile color */
+    stroke: #333333; /* Tile border color */
+    stroke-width: 1;
+}
+
+/* Basic Grid Setup for Centering the Game */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
