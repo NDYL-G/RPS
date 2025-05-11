@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strategy Game</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Optional: You can add a link to a favicon here -->
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+  <!-- Game Title -->
+  <h1>Turn-Based Strategy Game</h1>
+
+  <!-- Game Map Area (SVG Canvas) -->
+  <div id="map-container">
+    <svg id="game-map" width="800" height="600"></svg>
+  </div>
+
+  <!-- Game Control Buttons (optional) -->
+  <div id="controls">
+    <!-- Add any game controls like buttons here -->
+    <button id="startGame">Start Game</button>
+    <button id="resetGame">Reset Game</button>
+  </div>
+
+  <!-- Include JS Scripts in Correct Order -->
+  <script src="js/svg-utils.js"></script> <!-- Utility functions for hex rendering -->
+  <script src="js/tile-renderer.js"></script> <!-- Tile rendering logic -->
+  <script src="js/unit-renderer.js"></script> <!-- Unit rendering logic -->
+  <script src="js/svg-renderer.js"></script> <!-- Combines tile and unit rendering -->
+  <script src="js/map-generator.js"></script> <!-- Generates the map data -->
+
+  <script>
+    // Start the game and render a sample map on page load
+    const mapData = generateMap(10, 10);  // Example: Generate a 10x10 map
+    const svg = document.getElementById('game-map');
+    renderMap(svg, mapData);
+
+    // Add event listeners for controls (optional)
+    document.getElementById('startGame').addEventListener('click', () => {
+      // Logic to start the game (e.g., reset map, generate new map, etc.)
+      const mapData = generateMap(10, 10);
+      renderMap(svg, mapData);
+    });
+
+    document.getElementById('resetGame').addEventListener('click', () => {
+      // Logic to reset the game
+      const mapData = generateMap(10, 10);
+      renderMap(svg, mapData);
+    });
+  </script>
+
+</body>
+</html>
